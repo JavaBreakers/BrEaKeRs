@@ -3,23 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel = "stylesheet" type = "text/css"  href = "assets/css/bootstrap-theme.css" />
-    <link rel = "stylesheet" type = "text/css"  href = "assets/css/bootstrap.css" />
-    <link rel='stylesheet' id='style-css'  href='assets/css/diapo.css' type='text/css' media='all'>
 
     <script type="javascript" src="assets/js/jquery.min.js"></script>
-    <script type="javascript" src="assets/js/diapo.js"></script>
+
+    <link rel = "stylesheet" type = "text/css"  href = "assets/css/bootstrap-theme.css" />
+    <link rel = "stylesheet" type = "text/css"  href = "assets/css/bootstrap.css" />
+    <link rel = "stylesheet" type = "text/css"  href = "assets/css/style.css" />
+    <link rel='stylesheet' id='style-css'  href='assets/css/diapo.css' type='text/css' media='all'>
+
+
+
     <script type="javascript" src="assets/js/bootstrap.js"></script>
     <script type="javascript" src="assets/js/bootstrap.min.js"></script>
-
+    <script type="javascript" src="assets/js/diapo.js"></script>
 
 </head>
 <body>
 <script>
-    $(function() {
+    $(document).ready(function() {
+
         $('.pix_diapo').diapo();
+        $('#scroller').click(function() {
+            $("html, body").animate({scrollTop: 0}, 600);
+            return false;
+        });
+
+        $("#catBox_1").hover(function() {
+                    $('#fillUp_1').animate({
+                        height: '75%'
+                    }, 1500);
+                },
+                function() {
+                    $('#fillUp_1').animate({
+                        height: '10%'
+                    }, 1500);
+                }
+        );
+
+        $("#catBox_2").hover(function() {
+
+                    $('#fillUp_2').animate({
+                        height: '75%'
+                    }, 1500);
+                },
+                function() {
+
+                    $('#fillUp_2').animate({
+                        height: '10%'
+                    }, 1500);
+                }
+        );
+
+        $("#catBox_3").hover(function() {
+
+                    $('#fillUp_3').animate({
+                        height: '75%'
+                    }, 1500);
+                },
+                function() {
+
+                    $('#fillUp_3').animate({
+                        height: '10%'
+                    }, 1500);
+                }
+        );
+
+        $("#catBox_4").hover(function() {
+
+                    $('#fillUp_4').animate({
+                        height: '75%'
+                    }, 1500);
+                },
+                function() {
+
+                    $('#fillUp_4').animate({
+                        height: '10%'
+                    }, 1500);
+                }
+        );
+
+        $("#catBox_5").hover(function() {
+
+                    $('#fillUp_5').animate({
+                        height: '75%'
+                    }, 1500);
+                },
+                function() {
+
+                    $('#fillUp_5').animate({
+                        height: '10%'
+                    }, 1500);
+                }
+        );
+
+        $("#fbIcon").hover(function() {
+
+                    $('#fbIcon').animate({
+                        marginTop: '0'
+                    }, 500);
+                },
+                function() {
+
+                    $('#fbIcon').animate({
+                        marginTop: '17'
+                    }, 500);
+                }
+        );
+
+        $("#twIcon").hover(function() {
+
+                    $('#twIcon').animate({
+                        marginTop: '0'
+                    }, 500);
+                },
+                function() {
+
+                    $('#twIcon').animate({
+                        marginTop: '17'
+                    }, 500);
+                }
+        );
+
+        $("#lnIcon").hover(function() {
+
+                    $('#lnIcon').animate({
+                        marginTop: '0'
+                    }, 500);
+                },
+                function() {
+
+                    $('#lnIcon').animate({
+                        marginTop: '17'
+                    }, 500);
+                }
+        );
+
+        $("#pinIcon").hover(function() {
+
+                    $('#pinIcon').animate({
+                        marginTop: '0'
+                    }, 500);
+                },
+                function() {
+
+                    $('#pinIcon').animate({
+                        marginTop: '17'
+                    }, 500);
+                }
+        );
+
+        $("#goIcon").hover(function() {
+
+                    $('#goIcon').animate({
+                        marginTop: '0'
+                    }, 500);
+                },
+                function() {
+
+                    $('#goIcon').animate({
+                        marginTop: '17'
+                    }, 500);
+                }
+        );
+
+        $("#inIcon").hover(function() {
+
+                    $('#inIcon').animate({
+                        marginTop: '0'
+                    }, 500);
+                },
+                function() {
+
+                    $('#inIcon').animate({
+                        marginTop: '17'
+                    }, 500);
+                }
+        );
+
+        $("#utIcon").hover(function() {
+
+                    $('#utIcon').animate({
+                        marginTop: '0'
+                    }, 500);
+                },
+                function() {
+
+                    $('#utIcon').animate({
+                        marginTop: '17'
+                    }, 500);
+                }
+        );
+
     });
-    </script>
+
+</script>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -62,82 +239,204 @@
     </div><!-- /.container-fluid -->
 </nav>
 
+<!--<div class="row">-->
+    <!--<section>-->
+
+        <!--<div style="overflow:hidden; position:relative;z-index: 0;width:100%; margin: -1px -20px; padding:0 20px;">-->
+            <!--<div class="pix_diapo">-->
+
+                <!--<div data-thumb="assets/images/slider/thumbs/megamind1048.jpg">-->
+                    <!--<img src="assets/images/slider/slides/megamind1048.jpg">-->
+                    <!--<div class="caption elemHover fromLeft">-->
+                        <!--This is a simple sliding image with caption. You can have more than one caption and decide the layout of the caption via css.-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div data-thumb="assets/images/slider/thumbs/megamind_07.jpg">-->
+                    <!--<img src="assets/images/slider/slides/megamind_07.jpg">-->
+                    <!--<div class="caption elemHover fromRight" style="bottom:65px; padding-bottom:5px; color:#ff0; text-transform:uppercase">-->
+                        <!--Here you can see two captions.-->
+                    <!--</div>-->
+                    <!--<div class="caption elemHover fromLeft" style="padding-top:5px;">-->
+                        <!--The first are loaded immediately before than the second one-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div data-thumb="assets/images/slider/thumbs/wall-e.jpg" data-time="7000">-->
+                    <!--<img src="assets/images/slider/slides/wall-e.jpg">-->
+                    <!--<div class="elemHover caption fromLeft" style="bottom:70px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px;">-->
+                        <!--You can also get the same effect as the caption with:-->
+                    <!--</div>-->
+                    <!--<div class="elemHover button fromTop" data-easing="easeOutExpo" style="left:388px; bottom:78px;">-->
+                        <!--A button-->
+                    <!--</div>-->
+                    <!--<div class="elemHover button button2 fromBottom" data-easing="easeOutExpo" style="left:512px; bottom:78px;">-->
+                        <!--Or two buttons-->
+                    <!--</div>-->
+                    <!--<div class="elemHover fadeIn" style="left:600px; bottom:auto; top:0; padding-top:50px; color:#ff0; font-size:13px; line-height:20px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; background:url(assets/images/slider/demo/arrow_caption.png) no-repeat 230px 30px">-->
+                        <!--Or any other html element...<br>-->
+                        <!--and you can decide the transition time of any slide-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div data-thumb="assets/images/slider/thumbs/up-official-trailer-fake.jpg">-->
+                    <!--<iframe width="940" height="470" src="http://www.youtube.com/embed/qas5lWp7_R0?wmode=transparent&autoplay=1" data-fake="assets/images/slider/slides/up-official-trailer-fake.jpg" frameborder="0" allowfullscreen></iframe>-->
+                    <!--<div class="elemHover caption fromLeft elemToHide" style="bottom: 350px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; left:0">-->
+                        <!--You can also display videos, but it requires a "fake image"... read the documentation please-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div data-thumb="assets/images/slider/thumbs/second.png">-->
+                    <!--<img src="assets/images/slider/slides/big_buck_bunny.jpg">-->
+                    <!--<div class="caption elemHover fromLeft">-->
+                        <!--This is a simple sliding image with caption. You can have more than one caption and decide the layout of the caption via css.-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+                <!--<div data-thumb="assets/images/slider/thumbs/ratatouille2.jpg">-->
+                    <!--<img src="assets/images/slider/slides/ratatouille2.jpg">-->
+                    <!--<div class="caption elemHover fromLeft">-->
+                        <!--This is a simple sliding image with caption. You can have more than one caption and decide the layout of the caption via css.-->
+                    <!--</div>-->
+                    <!--<div class="elemHover button fromTop" data-easing="easeOutExpo" style="left:388px; bottom:78px;">-->
+                        <!--A button-->
+                    <!--</div>-->
+                    <!--<div class="elemHover button button2 fromBottom" data-easing="easeOutExpo" style="left:512px; bottom:78px;">-->
+                        <!--Or two buttons-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+
+        <!--</div>-->
+
+
+    <!--</section>-->
+
+
+<!--</div>-->
+
 <div class="row">
-    <section>
+    <div class="col-xs-4 col-md-2 col-md-offset-1">
+        <a href="#" class="thumbnail">
+            <img src="assets/images/thumb.png" alt="some image">
+        </a>
 
-        <div style="background: url(assets/img/body.png);overflow:hidden; position:relative;z-index: 0;width:100%; margin: -1px -20px; padding:0 20px;">
-            <div class="pix_diapo">
+    </div>
+    <div class="col-xs-4 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="assets/images/thumb.png" alt="some image">
+        </a>
+    </div>
+    <div class="col-xs-4 col-md-2">
+    <a href="#" class="thumbnail">
+        <img src="assets/images/thumb.png" alt="some image">
+    </a>
+</div>
+    <div class="col-xs-4 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="assets/images/thumb.png" alt="some image">
+        </a>
+    </div>
 
-                <div data-thumb="assets/images/slider/thumbs/megamind1048.jpg">
-                    <img src="assets/images/slider/slides/megamind1048.jpg">
-                    <div class="caption elemHover fromLeft">
-                        This is a simple sliding image with caption. You can have more than one caption and decide the layout of the caption via css.
-                    </div>
-                </div>
-
-                <div data-thumb="assets/images/slider/thumbs/megamind_07.jpg">
-                    <img src="assets/images/slider/slides/megamind_07.jpg">
-                    <div class="caption elemHover fromRight" style="bottom:65px; padding-bottom:5px; color:#ff0; text-transform:uppercase">
-                        Here you can see two captions.
-                    </div>
-                    <div class="caption elemHover fromLeft" style="padding-top:5px;">
-                        The first are loaded immediately before than the second one
-                    </div>
-                </div>
-
-                <div data-thumb="assets/images/slider/thumbs/wall-e.jpg" data-time="7000">
-                    <img src="assets/images/slider/slides/wall-e.jpg">
-                    <div class="elemHover caption fromLeft" style="bottom:70px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px;">
-                        You can also get the same effect as the caption with:
-                    </div>
-                    <div class="elemHover button fromTop" data-easing="easeOutExpo" style="left:388px; bottom:78px;">
-                        A button
-                    </div>
-                    <div class="elemHover button button2 fromBottom" data-easing="easeOutExpo" style="left:512px; bottom:78px;">
-                        Or two buttons
-                    </div>
-                    <div class="elemHover fadeIn" style="left:600px; bottom:auto; top:0; padding-top:50px; color:#ff0; font-size:13px; line-height:20px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; background:url(assets/images/slider/demo/arrow_caption.png) no-repeat 230px 30px">
-                        Or any other html element...<br>
-                        and you can decide the transition time of any slide
-                    </div>
-                </div>
-
-                <div data-thumb="assets/images/slider/thumbs/up-official-trailer-fake.jpg">
-                    <iframe width="940" height="470" src="http://www.youtube.com/embed/qas5lWp7_R0?wmode=transparent&autoplay=1" data-fake="assets/images/slider/slides/up-official-trailer-fake.jpg" frameborder="0" allowfullscreen></iframe>
-                    <div class="elemHover caption fromLeft elemToHide" style="bottom: 350px; width:auto; -webkit-border-top-right-radius: 6px; -webkit-border-bottom-right-radius: 6px; -moz-border-radius-topright: 6px; -moz-border-radius-bottomright: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; left:0">
-                        You can also display videos, but it requires a "fake image"... read the documentation please
-                    </div>
-                </div>
-
-                <div data-thumb="assets/images/slider/thumbs/second.png">
-                    <img src="assets/images/slider/slides/big_buck_bunny.jpg">
-                    <div class="caption elemHover fromLeft">
-                        This is a simple sliding image with caption. You can have more than one caption and decide the layout of the caption via css.
-                    </div>
-                </div>
-
-
-                <div data-thumb="assets/images/slider/thumbs/ratatouille2.jpg">
-                    <img src="assets/images/slider/slides/ratatouille2.jpg">
-                    <div class="caption elemHover fromLeft">
-                        This is a simple sliding image with caption. You can have more than one caption and decide the layout of the caption via css.
-                    </div>
-                    <div class="elemHover button fromTop" data-easing="easeOutExpo" style="left:388px; bottom:78px;">
-                        A button
-                    </div>
-                    <div class="elemHover button button2 fromBottom" data-easing="easeOutExpo" style="left:512px; bottom:78px;">
-                        Or two buttons
-                    </div>
-                </div>
-
-            </div>
-
+    <div class="col-xs-4 col-md-2">
+        <div class="thumbnail" style="overflow: hidden;">
+            <img src="assets/images/thumb.png" alt="some image">
+                <!--<p><a href="#" class="btn btn-primary" style="width: 100" role="button">Button</a></p>-->
         </div>
+    </div>
+
+</div>
 
 
-    </section>
+<div class="row  bottom" style="background-color: #b92c28">
+    
+    <div class="col-md-4">
+        <img src="assets/images/sale.png" width="400">
+    </div>
+    <div class="col-md-7 col-md-offset-1 topspace">
+        <div class="col-md-12 bigfont" style="text-align:center">
+            Grabe Your Favorite Items Online NOW!
+        </div>
+        <a class="btn btn-primary btn-xl col-lg-offset-4" style="font-family: impact" href="#" role="button">SEASON SALE!</a>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-xs-4 col-md-2 col-md-offset-1">
+        <a href="#" class="thumbnail">
+            <img src="assets/images/dress.png" alt="some image">
+        </a>
+
+    </div>
+    <div class="col-xs-4 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="assets/images/shoes.png" alt="some image">
+        </a>
+    </div>
+    <div class="col-xs-4 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="assets/images/csale.png" alt="some image">
+        </a>
+    </div>
+    <div class="col-xs-4 col-md-2">
+        <a href="#" class="thumbnail">
+            <img src="assets/images/mask.png" alt="some image">
+        </a>
+    </div>
+
+    <div class="col-xs-4 col-md-2">
+        <div class="thumbnail" style="overflow: hidden;">
+            <img src="assets/images/man.png" alt="some image">
+            <!--<p><a href="#" class="btn btn-primary" style="width: 100" role="button">Button</a></p>-->
+        </div>
+    </div>
+
+</div>
+
+<div class="col-lg-12" style=" height: 39px; overflow: hidden;background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) repeat scroll 0 0">
+
+    <span style="margin-left:39%;" id="fbIcon"><a href="#"></a></span>
+    <span id="twIcon"><a href="#"></a></span>
+    <span id="utIcon"><a href="#"></a></span>
+    <span id="inIcon"><a href="#"></a></span>
+    <span id="lnIcon"><a href="#"></a></span>
+    <span id="pinIcon"><a href="#"></a></span>
+</div>
+
+<div class="row" style="background-color: #000; min-height: 400px;">
+
+    <div class="col-md-12" style="background:linear-gradient(to right, rgba(214, 14, 14, 0), rgba(214, 14, 14, 0.75), rgba(214, 14, 14, 0));height: 10px;border: 0 none;">
+        </div>
+    <div class="col-md-7 col-md-offset-1 topspace">
+        <div class="col-md-3">
+        <img class="topspace left" src="assets/images/toon.png" width="">
+        </div>
+        <div class="col-md-5 col-md-offset-2">
+        <!--<img class="topspace left" src="assets/images/contact.png" width="50">-->
+        <h1>Contact Us</h1>
 
 
+        <form class="form topspace">
+            <div class="form-group">
+
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+            </div>
+            <div class="form-group">
+
+                <textarea type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send invitation</button>
+        </form>
+        </div>
+    </div>
+    <div class="col-lg-12 topspace" style="color: white; text-align: center;min-height: 50px;">
+
+        <div class="col-lg-12 " style="background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0))"></div>
+        Copy &copy Reserved 2017
+
+    </div>
 </div>
 
 </body>
