@@ -1,8 +1,18 @@
 /*Author: Faiqa Jahangir*/
 /*Datum: 10/20/2016*/
 
+
+@font-face {
+    font-family: 'Libel';
+    src: url(../fonts/libel-suit-rg.ttf);
+}
+
+.libel{
+    font-family:Libel;
+}
+
 .topspace{
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 
@@ -21,7 +31,7 @@
 }
 
 .bottom{
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 .bigfont {
