@@ -26,9 +26,9 @@ a:hover {
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   /*float: right;*/
-  margin: 40px auto;
-  max-width: 600px;
-  padding: 40px;
+  margin: 40px;
+  max-width: 480px;
+  padding: 25px;
 }
 
 .tab-group {
