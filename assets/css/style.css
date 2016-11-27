@@ -172,3 +172,10 @@
 .nav-inbox li{
     background: lightgray;
 }
+
+.footerhead{
+    color: white;
+    font-size: 20px;
+    font-family: impact;
+    margin-bottom: 18%;
+}
