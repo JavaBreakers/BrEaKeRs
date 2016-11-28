@@ -1,0 +1,82 @@
+
+<% include cores/header.ejs %>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="container top space">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 user-details">
+                    <div class="user-image topspace">
+                        <img src="assets/images/users/profile.jpg"  class="img-circle">
+                    </div>
+                    <div class="user-info-block">
+                        <div class="user-heading">
+                            <h3>User Name</h3>
+                            <span class="help-block">User Profile info Here</span>
+                        </div>
+
+                        <ul class="navigation userprofiletab" style="background:lightgray; border:1px solid;">
+                            <li>
+                                <a data-toggle="tab" href="/profile">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    User Information
+                                </a>
+                            </li>
+                            <li class="active" >
+                                <a data-toggle="tab" href="/settings">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="/inbox">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="/orderhistory">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    Orders History
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="user-body">
+                            <div class="tab-content">
+                                <div id="settings" class="tab-pane active">
+
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <h4 class="col-md-offset-3">Change Password:</h4>
+                                        <form>
+
+                                            <div class="form-group">
+                                                <label for="email">Current Password:</label>
+                                                <input type="password" class="form-control" id="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pwd">New Password:</label>
+                                                <input type="password" class="form-control" id="pwd">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="pwd">Repeat Password:</label>
+                                                <input type="password" class="form-control" id="pwd">
+                                            </div>
+                                            <button type="submit" class="btn btn-default">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<% include cores/footer.ejs %>
