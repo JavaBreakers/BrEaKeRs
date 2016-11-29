@@ -16,17 +16,22 @@ var profile = require('./routes/profile');
 var inbox = require('./routes/profile');
 var settings = require('./routes/profile');
 var orderhistory = require('./routes/profile');
+var updateprofile = require('./routes/profile');
 
-
+var socket = require('./routes/socket');
 
 var app = express();
 
 var connection = require('express-myconnection');
 var mysql = require('mysql');
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
 
 app.use(session({
     secret: '1234567890QWERTY',
@@ -46,13 +51,15 @@ app.use(
     }, 'request')
 );
 
-// uncomment after placing your favicon in /assets
-//app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use(express.static(path.join('public')));
 
 app.use('/', index);
 
@@ -77,6 +84,10 @@ app.get('/settings', settings);
 
 app.get('/orderhistory', orderhistory);
 
+app.get('/updateprofile', orderhistory);
+
+app.get('/socket', socket);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -95,5 +106,6 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
 
 module.exports = app;
