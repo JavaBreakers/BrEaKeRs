@@ -1,3 +1,4 @@
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -12,6 +13,9 @@ var login = require('./routes/login');
 var logout = require('./routes/logout');
 var contact = require('./routes/contact');
 var signup = require('./routes/signup');
+var categories = require('./routes/categories');
+var subcategories = require('./routes/subcategories');
+var products = require('./routes/products');
 
 var app = express();
 
@@ -59,6 +63,11 @@ app.post('/signup', signup);
 app.get('/contact', contact);
 
 app.post('/contact', contact);
+
+app.get('/categories', categories);
+app.get('/subcategories', subcategories);
+
+app.get('/products', products);
 
 app.get('/logout', logout);
 
