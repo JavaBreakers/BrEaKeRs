@@ -24,6 +24,7 @@ router.post('/login', function (req, res, next) {
 
             if (rows.length) {
 
+                req.session.userid = rows[0].user_id;
                 req.session.username = rows[0].user_name;
                 res.redirect('/profile');
 

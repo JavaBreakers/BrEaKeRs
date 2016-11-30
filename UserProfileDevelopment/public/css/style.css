@@ -1,0 +1,181 @@
+/*Author: Faiqa Jahangir*/
+/*Datum: 10/20/2016*/
+
+
+@font-face {
+    font-family: 'Libel';
+    src: url(../fonts/libel-suit-rg.ttf);
+}
+
+.libel{
+    font-family:Libel;
+}
+
+.topspace{
+    margin-top: 3%;
+}
+
+
+.btn-xl{
+    background-color: orange;
+    border-color: orange;
+    color: white;
+    border-radius: 5px;
+    font-size: 32px;
+    line-height: 1.33333;
+    padding: 10px 16px;
+}
+
+.left{
+    float:left;
+}
+
+.bottom{
+    margin-bottom: 3%;
+}
+
+.bigfont {
+    color: white;
+    font-size: 45px;
+    font-family: Impact;
+
+}
+
+#fbIcon{
+    width:40px;
+    height: 40px;
+    margin-top: 17px;
+    cursor:pointer;
+    background: url('../images/social-icons/fb.png');
+    background-size: 100%;
+    float: left;
+}
+
+#fbIcon:hover{
+    background: url('../images/social-icons/fb-colored.png');
+    background-size: 100%;
+}
+#twIcon{
+    width:40px;
+    height: 40px;
+    margin-top: 17px;
+    cursor:pointer;
+    background: url('../images/social-icons/tw.png');
+    background-size: 100%;
+    float: left;
+}
+
+#twIcon:hover{
+    background: url('../images/social-icons/tw-colored.png');
+    background-size: 100%;
+}
+
+#utIcon{
+    width:40px;
+    height: 40px;
+    margin-top: 17px;
+    cursor:pointer;
+    background: url('../images/social-icons/ut.png');
+    background-size: 100%;
+    float: left;
+}
+
+#utIcon:hover{
+    background: url('../images/social-icons/ut-colored.png');
+    background-size: 100%;
+}
+
+#pinIcon{
+    width:40px;
+    height: 40px;
+    margin-top: 17px;
+    cursor:pointer;
+    background: url('../images/social-icons/pin.png');
+    background-size: 100%;
+    float: left;
+}
+
+#pinIcon:hover{
+    background: url('../images/social-icons/pin-colored.png');
+    background-size: 100%;
+}
+
+#lnIcon{
+    width:40px;
+    height: 40px;
+    margin-top: 17px;
+    cursor:pointer;
+    background: url('../images/social-icons/ln.png');
+    background-size: 100%;
+    float: left;
+}
+
+#lnIcon:hover{
+    background: url('../images/social-icons/ln-colored.png');
+    background-size: 100%;
+}
+
+#inIcon{
+    width:40px;
+    height: 40px;
+    margin-top: 17px;
+    cursor:pointer;
+    background: url('../images/social-icons/in.png');
+    background-size: 100%;
+    float: left;
+}
+
+#inIcon:hover{
+    background: url('../images/social-icons/in-colored.png');
+    background-size: 100%;
+}
+
+#goIcon{
+    width:40px;
+    height: 40px;
+    margin-top: 17px;
+    cursor:pointer;
+    background: url('../images/social-icons/go.png');
+    background-size: 100%;
+    float: left;
+}
+
+#goIcon:hover{
+    background: url('../images/social-icons/go-colored.png');
+    background-size: 100%;
+}
+
+
+.user-details {position: relative; padding: 0;}
+.user-details .user-image {position: relative;  z-index: 1; width: 100%; text-align: center;}
+.user-image img { clear: both; margin: auto; position: relative;}
+
+.user-details .user-info-block {width: 100%; top: 55px; background: rgb(255, 255, 255); z-index: 0; padding-top: 35px;}
+.user-info-block .user-heading {width: 100%; text-align: center; margin: 10px 0 0;}
+.user-info-block .navigation {float: left; width: 100%; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #428BCA; border-top: 1px solid #428BCA;}
+.navigation li {float: left; margin: 0; padding: 0; }
+.navigation li a {padding: 20px 30px; float: left;}
+.navigation li.active a {background: #428BCA; color: #fff; }
+.user-info-block .user-body {float: left; padding: 5%; width: 90%;}
+.user-body .tab-content > div {float: left; width: 100%;}
+.user-body .tab-content h4 {width: 100%; margin: 10px 0; color: #333;}
+
+.userprofiletab{
+    background: lightgray;
+    border: 1px solid;
+}
+
+.userprofiletab li {
+    width:25%;
+}
+
+.nav-inbox li{
+    background: lightgray;
+}
+
+.footerhead{
+    color: white;
+    font-size: 20px;
+    font-family: impact;
+    margin-bottom: 18%;
+}
