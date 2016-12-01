@@ -56,7 +56,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Categories <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" style=" display: none;">
                         <li><a href="#"></a></li>
                         <li><a href="#">Men</a></li>
                         <li><a href="#">Women</a></li>
@@ -67,9 +67,9 @@
                 <li><a href="/contact">Contact</a></li>
                 <% if(typeof username !== 'undefined'){ %>
                 <li class="dropdown" id="acc">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">My Account <span class="caret"></span></a>
-                <ul class="dropdown-menu" id="accsub">
+                <ul class="dropdown-menu" id="accsub" style=" display: none;">
                     <li><a href="/profile">Profile</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="/settings">Settings</a></li>
@@ -93,4 +93,16 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<script>
+//    $(document).ready(function() {
+//
+////        alert("hi");
+//
+//        $('#acc').click(function () {
+//            alert("hi");
+//            $("accsub").toggle();
+//        });
+//
+//    });
+    </script>
 
