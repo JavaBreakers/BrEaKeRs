@@ -50,6 +50,7 @@
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>User Name</th>
                                                 <th>Order ID</th>
                                                 <th>Order Total</th>
@@ -58,13 +59,28 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            <% if(data.length){
+
+                                                for(var i = 0;i < data.length;i++) { %>
                                             <tr>
-                                                <td>John</td>
-                                                <td>DF6875</td>
-                                                <td>$53</td>
-                                                <td>July, 21st 2016</td>
-                                                <td>Delivered</td>
+                                                <td><%=(i+1)%></td>
+                                                <td><%=username%></td>
+                                                <td><%=data[i].orders_id%></td>
+                                                <td><%=data[i].orders_bill%></td>
+                                                <%  var date= new Date(data[i].orders_createdon).toISOString().
+                                                replace(/T/, ' ').replace(/\..+/, '');    %>
+
+                                                <td><%=date%></td>
+                                                <td><%=data[i].orders_status%></td>
                                             </tr>
+                                            <% }
+
+                                            }else{ %>
+                                            <tr>
+                                                <td colspan="3">No orders has been placed from your side</td>
+                                            </tr>
+                                            <% } %>
+
 
                                             </tbody>
                                         </table>

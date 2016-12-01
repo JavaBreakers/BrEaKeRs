@@ -15,18 +15,39 @@ var app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-router.get('/socket', function(req, res){
+router.get('/message', function(req, res){
 
-    res.render('chat');
+    if(req.session && req.session.username){
+    var id = req.session.userid;
+
+        var data = new Object();
+        data = req.session.username;
+
+    res.render('message', {userid: id,username: data});
+    }
+
+    else {
+        res.redirect('/login');
+    }
 
 });
-
+// var socketIds=[];
+// var sockets=[];
 io.on('connection', function(socket){
+    // socketIds.push(socket.id);
+
     socket.on('chatmsg', function(msg){
         console.log('message: ' + msg);
+        socket.emit("chatmsg",msg);
+        // socket=sockets[id];
     });
 
+    socket.on('disconnect', function(){
+        //console.log('user disconnected');
+        //loop match id and remove from aray
+    });
 });
+
 
 server.listen('3060', function(){
     console.log('listening on *:3060');

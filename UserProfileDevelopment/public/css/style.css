@@ -148,7 +148,7 @@
 
 .user-details {position: relative; padding: 0;}
 .user-details .user-image {position: relative;  z-index: 1; width: 100%; text-align: center;}
-.user-image img { clear: both; margin: auto; position: relative;}
+.user-image img { clear: both; margin: auto; position: relative; width:200px;}
 
 .user-details .user-info-block {width: 100%; top: 55px; background: rgb(255, 255, 255); z-index: 0; padding-top: 35px;}
 .user-info-block .user-heading {width: 100%; text-align: center; margin: 10px 0 0;}
@@ -165,6 +165,7 @@
     border: 1px solid;
 }
 
+
 .userprofiletab li {
     width:25%;
 }
@@ -173,9 +174,22 @@
     background: lightgray;
 }
 
+.socialiconbg{
+
+    height: 39px;
+    overflow: hidden;
+    background: #f3f3f3;
+    border-top: 1px solid maroon;
+
+}
+
 .footerhead{
     color: white;
     font-size: 20px;
     font-family: impact;
     margin-bottom: 18%;
+}
+
+.greybg{
+    background: black;
 }

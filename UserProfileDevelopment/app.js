@@ -17,6 +17,7 @@ var inbox = require('./routes/profile');
 var settings = require('./routes/profile');
 var orderhistory = require('./routes/profile');
 var updateprofile = require('./routes/profile');
+var message = require('./routes/socket');
 
 var socket = require('./routes/socket');
 
@@ -84,9 +85,12 @@ app.get('/settings', settings);
 
 app.get('/orderhistory', orderhistory);
 
-app.get('/updateprofile', orderhistory);
+app.post('/updateprofile', updateprofile);
 
 app.get('/socket', socket);
+
+app.get('/message', message);
+
 
 
 // catch 404 and forward to error handler
