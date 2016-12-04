@@ -116,16 +116,17 @@
 <script>
     var socket = io("http://localhost:3060");
     $('form').submit(function(){
-        socket.emit('chatmsg', $('#m').val()+ "My ID:" + $("#id").val());
+
+        var id = 1;
+        socket.emit('chatmsg',id, $('#m').val()+ "My ID:" + $("#id").val());
 //        socket.send(userid);
         $('#m').val('');
+        alert(socket.id);
         return false;
     });
 
     socket.on('chatmsg', function(msg){
-
-//        alert(msg);
-
+        alert(msg);
         $('#messages').append($('<li>').text(msg));
     });
 </script>
