@@ -8,16 +8,14 @@ var app = express();
 var router = express.Router();
 
 
-var sess;
-
 router.get('/profile', function (req, res, next) {
 
 
     if(req.session && req.session.username){
 
         var id = req.session.userid;
-
-
+        var data = new Object();
+        data = req.session.username;
 
         req.getConnection(function (err, connection) {
 
@@ -28,9 +26,6 @@ router.get('/profile', function (req, res, next) {
                 if (err)
 
                     console.log("Error Selecting : %s ", err);
-
-                    var data = new Object();
-                    data = req.session.username;
 
                     res.render('profile', {username: data, rows: rows});
 

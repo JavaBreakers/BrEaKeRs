@@ -15,8 +15,11 @@ var app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
+var uid;
+
 router.get('/message', function(req, res){
 
+    uid = req.session.userid;
     if(req.session && req.session.username){
     var id = req.session.userid;
 
@@ -33,13 +36,46 @@ router.get('/message', function(req, res){
 });
 // var socketIds=[];
 // var sockets=[];
+
+var clients =[];
+
 io.on('connection', function(socket){
+
     // socketIds.push(socket.id);
 
-    socket.on('chatmsg', function(msg){
-        console.log('message: ' + msg);
-        socket.emit("chatmsg",msg);
-        // socket=sockets[id];
+    clients.push({
+        userid : uid,
+        usersocketid: socket.id
+    });
+
+    // clients = {socket: socket.id};
+    console.log(clients);
+
+    // socket.on('chatmsg', function(msg){
+    //
+    //     socket.emit('chatmsg', msg);
+    //     console.log('message: ' + msg +  socket.id);
+    // });
+
+    socket.on('chatmsg', function(id,msg){
+
+        // alert(msg);
+    //
+        for(var i = 0, len = clients.length; i < len; i++) {
+            if( clients[ i ].userid === id )
+
+                socket.emit("chatmsg",msg);
+            socket.to(clients[ i ].usersocketid).emit("chatmsg",msg);
+            console.log('message: ' + msg);
+        }
+
+        // console.log(id);
+        // console.log(msg);
+        // socket.emit("chatmsg",msg);
+        // socket.to(1).emit("chatmsg",msg);
+        // console.log('message: ' + msg);
+    //     // socket.emit("chatmsg",msg);
+    //     // socket=sockets[id];
     });
 
     socket.on('disconnect', function(){
