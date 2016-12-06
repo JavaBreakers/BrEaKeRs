@@ -68,22 +68,22 @@
                                                     <div class="tab-content">
                                                         <div class="tab-pane fade in active" id="home">
                                                             <div class="list-group">
-                                                                <a href="#" class="list-group-item">
 
-                                                                    </span><span class="name" style="min-width: 120px;
-                                display: inline-block;">Bhaumik Patel</span> <span class="">This is big title</span>
-                                                                    <span class="text-muted" style="font-size: 11px;">- Hi hello how r u ?</span> <span
-                                                                            class="badge">12:10 AM</span> <span class="pull-right"></a><a href="#" class="list-group-item">
+                                                                <% if(data.length){
 
-                                                                    <span class="name" style="min-width: 120px;
-                                        display: inline-block;">Bhaumik Patel</span> <span class="">This is big title</span>
-                                                                    <span class="text-muted" style="font-size: 11px;">- Hi hello how r u ?</span> <span
-                                                                            class="badge">12:10 AM</span> <span class="pull-right"></a><a href="#" class="list-group-item read">
+                                                                for(var i = 0;i < data.length;i++) { %>
+                                                                <a href="/message/<%=data[i].user_id%>" class="list-group-item">
+                                                                <span class="name" style="min-width: 120px;
+                                display: inline-block;"><%=data[i].user_name%></span>
+                                                                <span class="badge"> <%=data[i].messages_createdon%></span> <span class="pull-right"></span>
+                                                                </a>
+                                                                        <% }
 
-                                                                    <span class="name" style="min-width: 120px;
-                                                display: inline-block;">Bhaumik Patel</span> <span class="">This is big title</span>
-                                                                    <span class="text-muted" style="font-size: 11px;">- Hi hello how r u ?</span> <span
-                                                                            class="badge">12:10 AM</span> <span class="pull-right"></a>
+                                                                        }else{ %>
+                                                                        <p>No orders has been placed from your side</p>
+                                                                        <% } %>
+
+
                                                             </div>
                                                         </div>
 

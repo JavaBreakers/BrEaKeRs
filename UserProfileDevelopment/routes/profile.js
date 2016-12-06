@@ -44,17 +44,31 @@ router.get('/profile', function (req, res, next) {
 router.get('/inbox', function (req, res, next) {
 
     if(req.session && req.session.username){
-    var data = new Object();
-    console.log(req.session.username);
-    if (req.session.username) {
-        data.username = req.session.username;
-    }
-    res.render('inbox', data);
-}
-else {
-    res.redirect('/login');
-}
 
+        var id = req.session.userid;
+        var data = new Object();
+        data = req.session.username;
+
+        req.getConnection(function (err, connection) {
+
+            var query = "SELECT * FROM messages m JOIN user u ON m.messages_from = u.user_id WHERE messages_to = '"+ id +"' GROUP BY messages_from ";
+
+            connection.query(query, function (err, rows) {
+
+                if (err)
+
+                    console.log("Error Selecting : %s ", err);
+
+                res.render('inbox', {username: data, data: rows});
+
+            });
+
+        });
+    }
+
+    else {
+        res.redirect('/login');
+    }
 
 });
 
