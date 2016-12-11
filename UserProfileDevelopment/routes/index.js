@@ -11,7 +11,17 @@ router.get('/', function (req, res, next) {
     res.render('index', data);
 });
 
+router.get('/about', function (req, res, next) {
 
+    var data = new Object();
+    console.log(req.session.username);
+    if(req.session.username){
+        data.username = req.session.username;
+    }
+        res.render('about', data);
+
+
+});
 
 
 module.exports = router;

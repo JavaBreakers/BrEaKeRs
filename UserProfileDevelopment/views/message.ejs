@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 user-details">
                     <div class="user-image topspace">
-                        <img src="images/users/profile.jpg"  class="img-circle">
+                        <img src="/images/users/profile.jpg"  class="img-circle">
                     </div>
                     <div class="user-info-block">
                         <div class="user-heading">
@@ -85,7 +85,7 @@
                                                                 <%
                                                                 for(var i = 0;i < data.length;i++) { %>
                                                                 <input type="hidden" id="sendname" value="<%=data[i].user_name%>" >
-                                                                <input type="hidden" id="sendid" value="<%=data[i].user_id%>" >
+                                                                <input type="hidden" id="userid" value="<%=userid%>" >
                                                                 <li <% if(data[i].messages_to == userid) { %> style="float: left;padding-left: 8px;padding-right: 8px; width:100%;" <% } else { %> style="width:100%;float: right;padding-left: 8px;padding-right: 8px;" <% } %>
                                                                 ><%=data[i].messages_text%></li>
                                                                 <% } %>
@@ -135,7 +135,7 @@
     $('form').submit(function(){
 
         var id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-        alert(id);
+//        alert(id);
         socket.emit('chatmsg',id, $('#m').val());
 //        socket.send(userid);
         $('#m').val('');
@@ -145,11 +145,27 @@
 
     socket.on('chatmsg', function(msg){
 //        alert(msg);
-        $('#messages').append($('<li style="float:left;width:100%;">').text(msg));
+
+//        var userid = $("#userid").val();
+//        var id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+//
+//        var style;
+//
+//        if(id == userid){
+//
+//            style = 'style="float:left;width:100%;text-align:left;"';
+//        }
+//
+//        else {
+//            style = 'style="float:left;width:100%;text-align:right;"';
+//        }
+
+        $('#messages').append($('<li '+ style +' >').text(msg));
     });
 
         setInterval(function() {
-            $("#msgbox").scrollTop();
+            $('#msgbox').animate({scrollTop: $('#msgbox').get(0).scrollHeight}, 2000);
+
         }, 100);
 
 
