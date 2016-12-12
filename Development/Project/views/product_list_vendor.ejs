@@ -37,7 +37,7 @@
         tr:nth-child(even){background-color: #f2f2f2}
 
         th {
-            background-color: #4CAF50;
+            background-color: #da5d5d;
             color: white;
         }
     </style>
@@ -309,13 +309,14 @@
 
             function insertprod(pid)
             {
+              if(confirm("Do you really want to DELETE this?"))
+                {
+                    document.getElementById("insertprod"+pid).style.display = "none";
 
-document.getElementById("insertprod"+pid).style.display = "none";
-var urlplus =
-                    "prod_id="      +  pid ;
-                xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET","http://localhost:8007/insert?"+urlplus, true);
-                xmlhttp.onreadystatechange=function(){
+                    var urlplus ="prod_id="      +  pid ;
+                    xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open("GET","http://localhost:8007/insert?"+urlplus, true);
+                    xmlhttp.onreadystatechange=function(){
                     if (xmlhttp.readyState==4 && xmlhttp.status==200){
                         string=xmlhttp.responseText;
 
@@ -324,7 +325,8 @@ var urlplus =
                 }
                 xmlhttp.send();
             }
-
+              else { return false;}
+            }
             function show_form(pid)
             {
                 document.getElementById("hiddenform").style.display="block";

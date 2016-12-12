@@ -25,9 +25,10 @@
             <fieldset>
 
                 <!-- Form Name -->
-                <legend>New Product</legend>
+                <legend>New Product  </legend>
 
                 <!-- Text input-->
+                <input id="userid" name="userid" type="text" type="hidden" value="3" />
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Product Name</label>
                     <div class="col-md-4">
@@ -196,6 +197,7 @@
                                 var products_price = document.getElementById("products_price").value;
                                 var products_vendor = document.getElementById("product_vendor").value;
                                 var gender  = document.getElementById("gender").value;
+                                var userid  = document.getElementById("userid").value;
                                 var filebutton1  = document.getElementById("filebutton1").value;
                                 var filebutton2  = document.getElementById("filebutton2").value;
                                 var filebutton3  = document.getElementById("filebutton3").value;
@@ -208,7 +210,6 @@
                                 products_price;
                                 products_vendor;
                                 gender;
-
                                 var urlplus =
                                 "products_name="      +  products_name +
                                 "&products_catagory=" +  products_catagory +
@@ -216,6 +217,7 @@
                                 "&products_colour="   +  products_colour +
                                 "&products_price="    +  products_price +
                                 "&products_vendor="   +  products_vendor +
+                                "&userid="   +  userid +
                                 "&gender=" +  gender;
                                 xmlhttp = new XMLHttpRequest();
                                 xmlhttp.open("GET","http://localhost:8001/insert?"+urlplus, true);

@@ -4,9 +4,11 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
     var data = new Object();
-    console.log(req.session.username);
     if(req.session.username){
         data.username = req.session.username;
+        data.user_id = req.session.user_id;
+           console.log(data.user_id);
+
     }
     res.render('index', data);
 });

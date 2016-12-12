@@ -17,6 +17,7 @@ http.createServer(function(request, response){
         products_colour: query.products_colour,
         products_price: query.products_price,
         products_vendor: query.products_vendor,
+        user_id: query.userid,
         gender:query.gender};
 
     var img1 = query.filebutton1;
@@ -34,7 +35,7 @@ http.createServer(function(request, response){
         if(err)
             throw err;
 
-        console.log('Last insert ID of product is:', res.insertId);
+        console.log('Last insert ID of product sis:', res.insertId);
 
         var waitTill = new Date(new Date().getTime() + 3000);
         while(waitTill > new Date()){}
@@ -51,4 +52,4 @@ http.createServer(function(request, response){
 
 
 
-}).listen(8009);
+}).listen(8001);
