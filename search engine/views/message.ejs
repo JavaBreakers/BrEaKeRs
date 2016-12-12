@@ -1,0 +1,175 @@
+
+<% include cores/header.ejs %>
+<style>
+
+    #messages li{
+        background: deepskyblue;
+        color: white;
+        padding: 3px;
+        border-radius: 12px;
+        padding-left: 3%;
+        min-width: 8px;
+        margin-top: 1%;
+    }
+
+
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="container top space">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 user-details">
+                    <div class="user-image topspace">
+                        <img src="/images/users/profile.jpg"  class="img-circle">
+                    </div>
+                    <div class="user-info-block">
+                        <div class="user-heading">
+                            <h3>User Name</h3>
+                            <span class="help-block">User Profile info Here</span>
+                        </div>
+
+                        <ul class="navigation userprofiletab" style="background:lightgray; border:1px solid;">
+                            <li>
+                                <a data-toggle="tab" href="/profile">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    User Information
+                                </a>
+                            </li>
+                            <li >
+                                <a data-toggle="tab" href="/settings">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    Settings
+                                </a>
+                            </li>
+                            <li  class="active">
+                                <a data-toggle="tab" href="/inbox">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="/orderhistory">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    Orders History
+                                </a>
+                            </li>
+                        </ul>
+                        <input type="hidden" id="id" value="<%=userid%>">
+                        <div class="user-body">
+                            <div class="tab-content">
+                                <div id="settings" class="tab-pane active">
+
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <div class="row">
+                                                <h3>Inbox</h3>
+
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-2">
+                                                    <a href="#" class="btn btn-danger btn-sm btn-block" role="button">COMPOSE</a>
+                                                    <hr />
+                                                    <ul class="nav nav-inbox">
+                                                        <li class="active"><a href="#"><span class="badge pull-right">42</span> Inbox </a>
+                                                        </li>
+                                                        <li><a href="http://www.jquery2dotnet.com">Sent Mail</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-10 col-md-10">
+                                                    <div class="tab-content">
+                                                        <div class="col-md-12">
+                                                            <h4 id="sendername"></h4>
+                                                            <div id="msgbox" class="col-md-12" style="margin-bottom: 1%;overflow-y: scroll; height:150px;">
+                                                            <ul id="messages">
+                                                                <%
+                                                                for(var i = 0;i < data.length;i++) { %>
+                                                                <input type="hidden" id="sendname" value="<%=data[i].user_name%>" >
+                                                                <input type="hidden" id="userid" value="<%=userid%>" >
+                                                                <li <% if(data[i].messages_to == userid) { %> style="float: left;padding-left: 8px;padding-right: 8px; width:100%;" <% } else { %> style="width:100%;float: right;padding-left: 8px;padding-right: 8px;" <% } %>
+                                                                ><%=data[i].messages_text%></li>
+                                                                <% } %>
+
+                                                            </ul>
+                                                            </div>
+                                                            <form action="">
+                                                                <input class="form-control" id="m" autocomplete="off" />
+                                                                <button class="btn btn-warning" style="float:right;margin-top: 1%;" >Send</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+<script>
+
+        $(document).ready(function() {
+
+         var name = $("#sendname").val();
+
+         $("#sendername").text(name);
+
+        });
+
+
+    var socket = io("http://localhost:3060");
+    $('form').submit(function(){
+
+        var id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+//        alert(id);
+        socket.emit('chatmsg',id, $('#m').val());
+//        socket.send(userid);
+        $('#m').val('');
+//        alert(socket.id);
+        return false;
+    });
+
+    socket.on('chatmsg', function(msg){
+//        alert(msg);
+
+//        var userid = $("#userid").val();
+//        var id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+//
+//        var style;
+//
+//        if(id == userid){
+//
+//            style = 'style="float:left;width:100%;text-align:left;"';
+//        }
+//
+//        else {
+//            style = 'style="float:left;width:100%;text-align:right;"';
+//        }
+
+        $('#messages').append($('<li '+ style +' >').text(msg));
+    });
+
+        setInterval(function() {
+            $('#msgbox').animate({scrollTop: $('#msgbox').get(0).scrollHeight}, 2000);
+
+        }, 100);
+
+
+</script>
+
+
+<% include cores/footer.ejs %>

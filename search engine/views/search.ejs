@@ -1,0 +1,41 @@
+
+<% include cores/header.ejs %>
+
+<div class="container">
+
+    <hgroup class="mb20">
+        <h1>Search Results</h1>
+        <h2 class="lead"><strong class="text-danger"> <%=data.length%></strong> results were found for the search for <strong class="text-danger"><%=keyword%></strong></h2>
+    </hgroup>
+
+    <section class="col-xs-12 col-sm-6 col-md-12">
+        <% if(data.length){
+
+            for(var i = 0;i < data.length;i++) { %>
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img src="<%=data[i].image_link%>" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <ul class="meta-search">
+                    <li><i class="glyphicon glyphicon-ok-sign"></i> <span>Available in Stock</span></li>
+                    <li><i class="glyphicon glyphicon-time"></i> <span>Delivery: 2 - 5 Days</span></li>
+                    <li><i class="glyphicon glyphicon-usd"></i> <span><%=data[i].products_price%></span></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <h3><a href="#" title=""><%=data[i].products_name%></a></h3>
+                <p><%=data[i].product_desc%></p>
+            </div>
+            <span class="clearfix border"></span>
+        </article>
+<% }
+
+}
+else {
+
+} %>
+    </section>
+</div>
+
+<% include cores/footer.ejs %>
