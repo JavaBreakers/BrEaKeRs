@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+    <% include cores/header.ejs %>
+
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/signup.css">
+
+
+    <div class="row">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+            <script>
+
+                $(document).ready(function(){
+
+                    $("#footerbox").load("cores/footer.html");
+
+                    $("#header").load("cores/header.html");
+
+
+                });
+
+            </script>
+
+
+            <div id="header"></div>
+            <div class="row" style="background-image:url('/images/body.png')">
+                <div class="col-lg-10 col-md-offset-1 topspace">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Women</a></li>
+                        <li class="breadcrumb-item"><a href="#">Accessories</a></li>
+                        <li class="breadcrumb-item active">Bags</li>
+                    </ol>
+                </div>
+                <div class="col-md-4 col-md-offset-1 ">
+                    <a href="#" class="thumbnail">
+                        <img src="/images/products/bags/2.1.jpg" alt="some image">
+                    </a>
+
+                </div>
+
+                <div class="col-md-6 " style="background: white;min-height: 400px">
+                    <div class="col-lg-12">
+                        <h1 class="bottom">GUCCI Bag</h1>
+                    </div>
+                    <div class="col-lg-12">
+                        <form class="bottom">
+                            <div class="form-group">
+                                <label for="size">Select Size:</label>
+                                <select name="size">
+                                    <option>XS</option>
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                    <option>XL</option>
+                                    <option>XXL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="color">Select Size:</label>
+                                <select name="color">
+                                    <option>Red</option>
+                                    <option>Yellow</option>
+                                    <option>Black</option>
+                                    <option>White</option>
+                                    <option>Pink</option>
+                                    <option>Orange</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity">Quantity:</label>
+                                <input type="text" name="quantity">
+                            </div>
+                            <div class="form-group">
+                                <label for="desc">Description:</label>
+                                <p name="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" style="width: 50%">Add to Cart</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-xs-4 col-md-1 col-md-offset-1">
+                            <a href="#" class="thumbnail">
+                                <img src="/images/products/bags/2.1.jpg" alt="some image">
+                            </a>
+
+                        </div>
+                        <div class="col-xs-4 col-md-1">
+                            <a href="#" class="thumbnail">
+                                <img src="/images/products/bags/2.2.jpg" alt="some image">
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-md-1">
+                            <a href="#" class="thumbnail">
+                                <img src="/images/products/bags/2.3.jpg" alt="some image">
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-lg-10 col-md-offset-1 topspace"  style="background: skyblue;">
+                    <div class="col-xs-4 col-md-2" style="margin-top: 1%">
+                        <a href="#" class="thumbnail">
+                            <img src="/images/users/profile.jpg" alt="some image">
+                        </a>
+
+                    </div>
+                    <div class="col-md-3">
+                        <h2>Eugene Walker</h2>
+                        <img src="/images/yellowstar.png" alt="some image" width="20">
+                        <img src="/images/yellowstar.png" alt="some image" width="20">
+                        <img src="/images/yellowstar.png" alt="some image" width="20">
+                        <img src="/images/greystar.png" alt="some image" width="20">
+                        <img src="/images/greystar.png" alt="some image" width="20">
+                        <br><br>
+                        <label class="" for="email">EMail:</label>
+                        <p name="email">Eugene@breakers.com</p>
+                    </div>
+                    <div class="col-md-6 topspace">
+                        <label class="" for="desc">About:</label>
+                        <p name="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Product Reviews</h3>
+                    </div><!-- /col-sm-12 -->
+                </div><!-- /row -->
+                <div class="row">
+                    <div class="col-lg-7 bottom">
+
+                        <div class="col-sm-2">
+                            <div class="thumbnail">
+                                <img class="img-responsive user-photo" src="/images/users/u1.png">
+                            </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-9">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <strong>John Wick</strong> <span class="text-muted">commented 5 days ago</span>
+                                </div>
+                                <div class="panel-body">
+                                    Very Nice!
+                                </div><!-- /panel-body -->
+                            </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
+
+
+                        <div class="col-sm-2">
+                            <div class="thumbnail">
+                                <img class="img-responsive user-photo" src="/images/users/u2.png">
+                            </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-9">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <strong>Annie Bay</strong> <span class="text-muted">commented 5 days ago</span>
+                                </div>
+                                <div class="panel-body">
+                                    Loved It, I bought it from here a month ago and I am in love with this bag :)
+                                </div><!-- /panel-body -->
+                            </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
+
+                        <div class="col-sm-2">
+                            <div class="thumbnail">
+                                <img class="img-responsive user-photo" src="/images/users/u3.png">
+                            </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-9">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <textarea cols="60"></textarea>
+                                </div>
+
+
+
+                            </div><!-- /panel panel-default -->
+                            <button class="btn btn-primary">SEND</button>
+                        </div><!-- /col-sm-5 -->
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="col-lg-12">
+                            <h1>Similar Products</h1>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <a href="#" class="thumbnail">
+                                <img src="/images/products/bags/4.1.jpg" alt="some image">
+                            </a>
+
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <a href="#" class="thumbnail">
+                                <img src="/images/products/bags/5.1.jpg" alt="some image">
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <a href="#" class="thumbnail">
+                                <img src="/images/products/bags/6.1.jpg" alt="some image">
+                            </a>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <a href="#" class="thumbnail">
+                                <img src="/images/products/bags/7.1.jpg" alt="some image">
+                            </a>
+                        </div>
+
+                        <div class="col-xs-4 col-md-4">
+                            <div class="thumbnail" style="overflow: hidden;">
+                                <img src="/images/products/bags/8.1.jpg" alt="some image">
+                                <!--<p><a href="#" class="btn btn-primary" style="width: 100" role="button">Button</a></p>-->
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4 col-md-4">
+                            <div class="thumbnail" style="overflow: hidden;">
+                                <img src="/images/products/bags/9.1.jpg" alt="some image">
+                                <!--<p><a href="#" class="btn btn-primary" style="width: 100" role="button">Button</a></p>-->
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--<div class="col-md-12 bottom">-->
+
+
+                    <!--</div>-->
+
+                </div><!-- /row -->
+
+            </div><!-- /container -->
+            <!--<div class="row" style="height:100px;margin-top: -1%;background: url('/images/lights.png'); background-repeat: repeat-x;">-->
+
+            <!--</div>-->
+            <div class="row"  style="background-color: #b92c28;">
+                <div class="col-lg-12 col-md-offset-1">
+                    <h1 class="bigfont">Featured Products</h1>
+                </div>
+                <div class="col-xs-4 col-md-2 col-md-offset-1">
+                    <a href="#" class="thumbnail">
+                        <img src="/images/products/hoodies/3.1.jpg" alt="some image">
+                    </a>
+
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                        <img src="/images/products/shoes/1.1.jpg" alt="some image">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                        <img src="/images/products/shoes/5.1.jpg" alt="some image">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <a href="#" class="thumbnail">
+                        <img src="/images/products/bags/10.1.jpg" alt="some image">
+                    </a>
+                </div>
+
+                <div class="col-xs-4 col-md-2">
+                    <div class="thumbnail" style="overflow: hidden;">
+                        <img src="/images/products/accessories/10.1.jpg" alt="some image">
+                        <!--<p><a href="#" class="btn btn-primary" style="width: 100" role="button">Button</a></p>-->
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col-lg-5 col-md-offset-1 topspace bottom" style="background: #3e7537 none repeat scroll 0 0">
+
+
+                    <div class="col-lg-5">
+                        <img src="/images/santa.gif" alt="some image" width="200">
+                    </div>
+                    <div class="col-lg-7">
+                        <img src="/images/banner.png" alt="some image" width="552">
+
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-offset-3 topspace">
+                    <img src="/images/sale.jpg" alt="some image" width="185">
+                </div>
+
+            </div>
+    </div>
+
+    </div>
+    </div>
+
+<% include cores/footer.ejs %>

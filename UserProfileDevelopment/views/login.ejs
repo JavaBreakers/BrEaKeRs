@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/signup.css">
 
-    <% if(typeof error !== 'undefined'){ %>
+    <div class="row">
+        <div class="col-lg-7" style="float: left;">
+        <% if(typeof error !== 'undefined'){ %>
     <div class="alert alert-danger" role="alert"><%= error %></div>
     <% } %>
     <div class="form">
@@ -96,8 +98,11 @@
 
         </div><!-- tab-content -->
 
+    </div>
     </div> <!-- /form -->
 
+<img style="float: left;width: 42%;" src="/images/lsale.png" >
+    </div>
 
     <script src="/js/index.js"></script>
 

@@ -8,18 +8,23 @@ var bodyParser = require('body-parser');
 
 var session = require('express-session');
 
-var index = require('./routes/index');
-var login = require('./routes/login');
-var logout = require('./routes/logout');
-var contact = require('./routes/contact');
-var signup = require('./routes/signup');
-var categories = require('./routes/categories');
-var subcategories = require('./routes/subcategories');
-var products = require('./routes/products');
+var index       =      require('./routes/index');
+var login       =      require('./routes/login');
+var logout      =      require('./routes/logout');
+var contact     =      require('./routes/contact');
+var signup      =      require('./routes/signup');
+var categories  =      require('./routes/categories');
+var product_list_vendor  =      require('./routes/product_list_vendor');
+var subcategories =    require('./routes/subcategories');
+var productins      =    require('./routes/productins');
+var productupd      =    require('./routes/productupd');
+var productdel      =    require('./routes/productdel');
+var products =         require('./routes/products');
+var vendor =           require('./routes/vendor');
 
 var app = express();
 
-var connection = require('express-myconnection');
+var connection =        require('express-myconnection');
 var mysql = require('mysql');
 
 // view engine setup
@@ -35,7 +40,6 @@ app.use(session({
 
 app.use(
     connection(mysql, {
-
         host: 'localhost',
         user: 'root',
         password: '',
@@ -62,12 +66,15 @@ app.post('/signup', signup);
 
 app.get('/contact', contact);
 
+
 app.post('/contact', contact);
 
 app.get('/categories', categories);
 app.get('/subcategories', subcategories);
+app.get('/product_list_vendor', product_list_vendor);
 
 app.get('/products', products);
+// app.get('/vendor', vendor);
 
 app.get('/logout', logout);
 

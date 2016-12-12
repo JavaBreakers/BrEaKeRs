@@ -1,0 +1,110 @@
+
+<% include cores/header.ejs %>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="container top space">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 user-details">
+                    <div class="user-image topspace">
+                        <img src="images/users/profile.jpg"  class="img-circle">
+                    </div>
+                    <div class="user-info-block">
+                        <div class="user-heading">
+                            <h3>User Name</h3>
+                            <span class="help-block">User Profile info Here</span>
+                        </div>
+
+                        <ul class="navigation userprofiletab" style="background:lightgray; border:1px solid;">
+                            <li>
+                                <a data-toggle="tab" href="/profile">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    User Information
+                                </a>
+                            </li>
+                            <li >
+                                <a data-toggle="tab" href="/settings">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    Settings
+                                </a>
+                            </li>
+                            <li  class="active">
+                                <a data-toggle="tab" href="/inbox">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="/orderhistory">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    Orders History
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="user-body">
+                            <div class="tab-content">
+                                <div id="settings" class="tab-pane active">
+
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <div class="row">
+                                                <h3>Inbox</h3>
+
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-2">
+                                                    <a href="#" class="btn btn-danger btn-sm btn-block" role="button">COMPOSE</a>
+                                                    <hr />
+                                                    <ul class="nav nav-inbox">
+                                                        <li class="active"><a href="#"><span class="badge pull-right">42</span> Inbox </a>
+                                                        </li>
+                                                        <li><a href="http://www.jquery2dotnet.com">Sent Mail</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-10 col-md-10">
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane fade in active" id="home">
+                                                            <div class="list-group">
+
+                                                                <% if(data.length){
+
+                                                                for(var i = 0;i < data.length;i++) { %>
+                                                                <a href="/message/<%=data[i].user_id%>" class="list-group-item">
+                                                                <span class="name" style="min-width: 120px;
+                                display: inline-block;"><%=data[i].user_name%></span>
+                                                                <span class="badge"> <%=data[i].messages_createdon%></span> <span class="pull-right"></span>
+                                                                </a>
+                                                                        <% }
+
+                                                                        }else{ %>
+                                                                        <p>No messages from your side</p>
+                                                                        <% } %>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<% include cores/footer.ejs %>

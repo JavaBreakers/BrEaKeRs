@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var index = require('./routes/index');
+var about = require('./routes/index');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var contact = require('./routes/contact');
@@ -88,6 +89,8 @@ app.get('/settings', settings);
 app.get('/orderhistory', orderhistory);
 
 app.post('/updateprofile', updateprofile);
+
+app.post('/about', about);
 
 // app.get('/socket', socket);
 
