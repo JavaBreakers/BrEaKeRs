@@ -6,7 +6,13 @@
 
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-
+<style>form.form-horizontal label {
+        color: black !important;
+        /* size: 1px !important; */
+        font-size: 16px;
+        margin-left: -13px;
+        padding-bottom: 10px;
+    }</style>
     <% include cores/header.ejs %>
 
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
@@ -14,7 +20,7 @@
     <link rel="stylesheet" href="/css/signup.css">
 
     <div class="container">
-        <h2>Insert Products </h2>
+        <h2>Insert Products..</h2>
         <form class="form-horizontal">
             <fieldset>
 
@@ -25,7 +31,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Product Name</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="Enter product name" class="form-control input-md">
+                        <input id="products_name" name="textinput" type="text" placeholder="Enter product name" class="form-control input-md">
 
                     </div>
                 </div>
@@ -33,7 +39,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Product Category</label>
                     <div class="col-md-4">
-                        <select>
+                        <select id="products_catagory">
                             <option>a</option>
                             <option>a</option>
                         </select>
@@ -42,7 +48,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Product Size</label>
                     <div class="col-md-4">
-                        <select>
+                        <select id="products_size">
                             <option>1</option>
                             <option>2</option>
                         </select>
@@ -50,29 +56,63 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Product Size</label>
+                    <label class="col-md-4 control-label" for="textinput">Product Color</label>
                     <div class="col-md-4">
-                        <select>
+                        <select id="products_colour">
                             <option>red</option>
                             <option>orange</option>
                         </select>
                     </div>
                 </div>
 
+
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Text Input</label>
+                    <label class="col-md-4 control-label" for="textinput">Product Price</label>
                     <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
-                        <span class="help-block">help</span>
+                        <input id="products_price" name="textinput" type="text" placeholder="produc price" class="form-control input-md">
+                        <!--<span class="help-block">help</span>-->
                     </div>
                 </div>
+
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Gender</label>
+                    <div class="col-md-4">
+                        <select id="gender">
+                            <option value="1">Male</option>
+                            <option value="2" selected="selected">Female</option>
+                            <option value="3">Both</option>
+                        </select>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product vendor</label>
+                    <div class="col-md-4">
+                        <input id="product_vendor" name="textinput" type="text" placeholder="product vendor" class="form-control input-md">
+                        <!--<span class="help-block">help</span>-->
+                    </div>
+                </div>
+                <!--&lt;!&ndash; Text input&ndash;&gt;-->
+                <!--<div class="form-group">-->
+                    <!--<label class="col-md-4 control-label" for="textinput">Text Input</label>-->
+                    <!--<div class="col-md-4">-->
+                        <!--<input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">-->
+                        <!--&lt;!&ndash;<span class="help-block">help</span>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
 
                 <!-- Select Multiple -->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectmultiple">Size</label>
                     <div class="col-md-4">
-                        <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                        <select id="product_size" name="selectmultiple" class="form-control" multiple="multiple">
                             <option value="1">S</option>
                             <option value="2">M</option>
                             <option value="">L</option>
@@ -85,7 +125,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="selectmultiple">Select Colours</label>
                     <div class="col-md-4">
-                        <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                        <select id="product_colours" name="selectmultiple" class="form-control" multiple="multiple">
                             <option value="1">Black</option>
                             <option value="2">Red</option>
                             <option value="">Green</option>
@@ -100,7 +140,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="filebutton">Image 1</label>
                     <div class="col-md-4">
-                        <input id="filebutton" name="filebutton" class="input-file" type="file">
+                        <input id="filebutton1" name="filebutton" class="input-file" type="file">
                     </div>
                 </div>
 
@@ -108,7 +148,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="filebutton">Image 2</label>
                     <div class="col-md-4">
-                        <input id="filebutton" name="filebutton" class="input-file" type="file">
+                        <input id="filebutton2" name="filebutton" class="input-file" type="file">
                     </div>
                 </div>
 
@@ -116,7 +156,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="filebutton">Image 3</label>
                     <div class="col-md-4">
-                        <input id="filebutton" name="filebutton" class="input-file" type="file">
+                        <input id="filebutton3" name="filebutton" class="input-file" type="file">
                     </div>
                 </div>
 
@@ -124,7 +164,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="filebutton">Image 4</label>
                     <div class="col-md-4">
-                        <input id="filebutton" name="filebutton" class="input-file" type="file">
+                        <input id="filebutton4" name="filebutton" class="input-file" type="file">
                     </div>
                 </div>
 
@@ -132,27 +172,53 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="filebutton">Image 5</label>
                     <div class="col-md-4">
-                        <input id="filebutton" name="filebutton" class="input-file" type="file">
+                        <input id="filebutton5" name="filebutton" class="input-file" type="file">
                     </div>
                 </div>
 
                 <!-- Button (Double) -->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="button1id"></label>
                     <div class="col-md-8">
-                        <button id="button1id" name="button1id" class="btn btn-success" onclick="insertprod()">Ssave</button>
+                        <button id="" name="" class="btn btn-success" onclick="insertprod()">save</button>
                         <script>
 
                             function insertprod()
-                            {alert("113344");
-                                var name = "name";
-                                var cell = "cell";
+                            {
 
+                                var products_name = document.getElementById("products_name").value;
+                                var products_catagory = document.getElementById("products_catagory").value;
+                                var products_size = document.getElementById("products_size").value;
+                                var products_colour = document.getElementById("products_colour").value;
+                                var products_price = document.getElementById("products_price").value;
+                                var products_vendor = document.getElementById("product_vendor").value;
+                                var gender  = document.getElementById("gender").value;
+                                var filebutton1  = document.getElementById("filebutton1").value;
+                                var filebutton2  = document.getElementById("filebutton2").value;
+                                var filebutton3  = document.getElementById("filebutton3").value;
+                                var filebutton4  = document.getElementById("filebutton4").value;
+                                var filebutton5  = document.getElementById("filebutton5").value;
+                                products_name;
+                                products_catagory;
+                                products_size;
+                                products_colour;
+                                products_price;
+                                products_vendor;
+                                gender;
+
+                                var urlplus =
+                                "products_name="      +  products_name +
+                                "&products_catagory=" +  products_catagory +
+                                "&products_size="     +  products_size +
+                                "&products_colour="   +  products_colour +
+                                "&products_price="    +  products_price +
+                                "&products_vendor="   +  products_vendor +
+                                "&gender=" +  gender;
                                 xmlhttp = new XMLHttpRequest();
-                                xmlhttp.open("GET","http://localhost:8001/insert?name="+name+"&cell="+cell, true);
+                                xmlhttp.open("GET","http://localhost:8001/insert?"+urlplus, true);
                                 xmlhttp.onreadystatechange=function(){
                                     if (xmlhttp.readyState==4 && xmlhttp.status==200){
                                         string=xmlhttp.responseText;
+
                                         alert('new row insertedid is '+string);
                                     }
                                 }
