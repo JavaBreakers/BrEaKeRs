@@ -40,8 +40,11 @@
                     <label class="col-md-4 control-label" for="textinput">Product Category</label>
                     <div class="col-md-4">
                         <select id="products_catagory">
-                            <option>a</option>
-                            <option>a</option>
+                            <option value="1">Casual Shirts</option>
+                            <option value="2">Jeans</option>
+                            <option value="3">Shoes</option>
+                            <option value="4">Jewellery</option>
+                            <option value="5">Bags</option>
                         </select>
                     </div>
                 </div>
@@ -49,8 +52,10 @@
                     <label class="col-md-4 control-label" for="textinput">Product Size</label>
                     <div class="col-md-4">
                         <select id="products_size">
-                            <option>1</option>
-                            <option>2</option>
+                            <option value="1">S</option>
+                            <option value="2">M</option>
+                            <option value="3">L</option>
+                            <option value="4">XL</option>
                         </select>
                     </div>
                 </div>
@@ -61,6 +66,11 @@
                         <select id="products_colour">
                             <option>red</option>
                             <option>orange</option>
+                            <option>Grey</option>
+                            <option>Pink</option>
+                            <option>Purple</option>
+                            <option>Blue</option>
+                            <option>Black</option>
                         </select>
                     </div>
                 </div>
@@ -95,8 +105,16 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Product vendor</label>
                     <div class="col-md-4">
-                        <input id="product_vendor" name="textinput" type="text" placeholder="product vendor" class="form-control input-md">
-                        <!--<span class="help-block">help</span>-->
+
+                        <select id="product_vendor">
+                            <option value="1">Nike</option>
+                            <option value="2">H&M</option>
+                            <option value="3">NewYorker</option>
+                            <option value="4">C&A</option>
+                            <option value="5">Pumma</option>
+                            <option value="6">Polo</option>
+                            <option value="7">Zara</option>
+                        </select>
                     </div>
                 </div>
                 <!--&lt;!&ndash; Text input&ndash;&gt;-->
@@ -109,29 +127,29 @@
                 <!--</div>-->
 
                 <!-- Select Multiple -->
-                <div class="form-group">
+                <div class="form-group" style="display: none">
                     <label class="col-md-4 control-label" for="selectmultiple">Size</label>
                     <div class="col-md-4">
                         <select id="product_size" name="selectmultiple" class="form-control" multiple="multiple">
                             <option value="1">S</option>
                             <option value="2">M</option>
-                            <option value="">L</option>
-                            <option value="">XL</option>
+                            <option value="3">L</option>
+                            <option value="4">XL</option>
                         </select>
                     </div>
                 </div>
 
                 <!-- Select Multiple -->
-                <div class="form-group">
+                <div class="form-group"  style="display: none">
                     <label class="col-md-4 control-label" for="selectmultiple">Select Colours</label>
                     <div class="col-md-4">
                         <select id="product_colours" name="selectmultiple" class="form-control" multiple="multiple">
                             <option value="1">Black</option>
                             <option value="2">Red</option>
-                            <option value="">Green</option>
-                            <option value="">Blue</option>
-                            <option value="">Pink</option>
-                            <option value="">Grey</option>
+                            <option value="3">Green</option>
+                            <option value="4">Blue</option>
+                            <option value="5">Pink</option>
+                            <option value="6">Grey</option>
                         </select>
                     </div>
                 </div>
