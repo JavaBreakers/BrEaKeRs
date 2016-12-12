@@ -57,7 +57,7 @@
                 <th> Delete</th>
 
             </tr>
-            <tr>
+            <tr id="insertprod43">
                 <td>products_id</td>
                 <td>products_name</td>
                 <td>products_catagory</td>
@@ -67,7 +67,7 @@
                 <td>  <button id="" name="" class="btn btn-danger" onclick="insertprod(43) ">Delete</button></td>
 
             </tr>
-            <tr>
+            <tr id="insertprod44">
                 <td>products_id</td>
                 <td>products_name</td>
                 <td>products_catagory</td>
@@ -76,187 +76,188 @@
                 <td> <button id="" name="" class="btn btn-primary" onclick="show_form(45)">Edit</button></td>
                 <td>  <button id="" name="" class="btn btn-danger" onclick="insertprod(44) ">Delete</button></td>
             </tr>
-            <tr>
+            <tr id="insertprod45">
                 <td>products_id</td>
                 <td>products_name</td>
                 <td>products_catagory</td>
                 <td>products_price</td>
                 <td>gender</td>
-                <td> <button id="" name="" class="btn btn-primary" onclick="show_form(45)">Edit</button></td>
-                <td>  <button id="" name="" class="btn btn-danger" onclick="insertprod(45) ">Delete</button></td>
+                <td> <button id="insertprod45" name="" class="btn btn-primary" onclick="show_form(45)">Edit</button></td>
+                <td>  <button  name="" class="btn btn-danger" onclick="insertprod(45) ">Delete</button></td>
             </tr>
         </table>
         
         <div style="display: none;" id="hiddenform" >
 
             <form class="form-horizontal">
-                <fieldset>
 
-                    <!-- Form Name -->
-                    <legend>update Product        <button id="button2id" name="button2id" class="btn btn-primary" onclick="hide_form()">Cancel</button>  </legend>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">Product Name</label>
-                        <div class="col-md-4">
-                            <input id="products_name" name="textinput" type="text" placeholder="Enter product name" class="form-control input-md">
-
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">Product Category</label>
-                        <div class="col-md-4">
-                            <select id="products_catagory">
-                                <option>Tops</option>
-                                <option>Bottom</option>
-                                <option>Jackets</option>
-                                <option>Dresses</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">Product Size</label>
-                        <div class="col-md-4">
-                            <select id="products_size">
-                                <option>L</option>
-                                <option>M</option>
-                                <option>S</option>
-                                <option>XL</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">Product Color</label>
-                        <div class="col-md-4">
-                            <select id="products_colour">
-                                <option>red</option>
-                                <option>orange</option>
-                            </select>
-                        </div>
-                    </div>
+                <button id="button2id" name="button2id" class="btn btn-primary" onclick="hide_form()">Cancel</button>
 
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">Product Price</label>
-                        <div class="col-md-4">
-                            <input id="products_price" name="textinput" type="text" placeholder="produc price" class="form-control input-md">
-                            <!--<span class="help-block">help</span>-->
-                        </div>
+
+                        <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Name</label>
+                    <div class="col-md-4">
+                        <input id="products_name" name="textinput" type="text" placeholder="Enter product name" class="form-control input-md">
+
                     </div>
-
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">Gender</label>
-                        <div class="col-md-4">
-                            <select id="gender">
-                                <option value="1">Male</option>
-                                <option value="2" selected="selected">Female</option>
-                                <option value="3">Both</option>
-                            </select>
-
-                        </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Category</label>
+                    <div class="col-md-4">
+                        <select id="products_catagory">
+                            <option value="1">Casual Shirts</option>
+                            <option value="2">Jeans</option>
+                            <option value="3">Shoes</option>
+                            <option value="4">Jewellery</option>
+                            <option value="5">Bags</option>
+                        </select>
                     </div>
-
-
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="textinput">Product vendor</label>
-                        <div class="col-md-4">
-                            <input id="product_vendor" name="textinput" type="text" placeholder="product vendor" class="form-control input-md">
-                            <!--<span class="help-block">help</span>-->
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Size</label>
+                    <div class="col-md-4">
+                        <select id="products_size">
+                            <option value="1">S</option>
+                            <option value="2">M</option>
+                            <option value="3">L</option>
+                            <option value="4">XL</option>
+                        </select>
                     </div>
-                    <!--&lt;!&ndash; Text input&ndash;&gt;-->
-                    <!--<div class="form-group">-->
-                    <!--<label class="col-md-4 control-label" for="textinput">Text Input</label>-->
-                    <!--<div class="col-md-4">-->
-                    <!--<input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">-->
-                    <!--&lt;!&ndash;<span class="help-block">help</span>&ndash;&gt;-->
-                    <!--</div>-->
-                    <!--</div>-->
+                </div>
 
-                    <!-- Select Multiple -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectmultiple">Size</label>
-                        <div class="col-md-4">
-                            <select id="product_size" name="selectmultiple" class="form-control" multiple="multiple">
-                                <option value="1">S</option>
-                                <option value="2">M</option>
-                                <option value="">L</option>
-                                <option value="">XL</option>
-                            </select>
-                        </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Color</label>
+                    <div class="col-md-4">
+                        <select id="products_colour">
+                            <option>red</option>
+                            <option>orange</option>
+                            <option>Grey</option>
+                            <option>Pink</option>
+                            <option>Purple</option>
+                            <option>Blue</option>
+                            <option>Black</option>
+                        </select>
                     </div>
+                </div>
 
-                    <!-- Select Multiple -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="selectmultiple">Select Colours</label>
-                        <div class="col-md-4">
-                            <select id="product_colours" name="selectmultiple" class="form-control" multiple="multiple">
-                                <option value="1">Black</option>
-                                <option value="2">Red</option>
-                                <option value="">Green</option>
-                                <option value="">Blue</option>
-                                <option value="">Pink</option>
-                                <option value="">Grey</option>
-                            </select>
-                        </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Price</label>
+                    <div class="col-md-4">
+                        <input id="products_price" name="textinput" type="text" placeholder="produc price" class="form-control input-md">
+                        <!--<span class="help-block">help</span>-->
                     </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Gender</label>
+                    <div class="col-md-4">
+                        <select id="gender">
+                            <option value="1">Male</option>
+                            <option value="2" selected="selected">Female</option>
+                            <option value="3">Both</option>
+                        </select>
 
-                    <!-- File Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="filebutton">Image 1</label>
-                        <div class="col-md-4">
-                            <input id="filebutton1" name="filebutton" class="input-file" type="file">
-                        </div>
                     </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product vendor</label>
+                    <div class="col-md-4">
 
-                    <!-- File Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="filebutton">Image 2</label>
-                        <div class="col-md-4">
-                            <input id="filebutton2" name="filebutton" class="input-file" type="file">
-                        </div>
+                        <select id="product_vendor">
+                            <option value="1">Nike</option>
+                            <option value="2">H&M</option>
+                            <option value="3">NewYorker</option>
+                            <option value="4">C&A</option>
+                            <option value="5">Pumma</option>
+                            <option value="6">Polo</option>
+                            <option value="7">Zara</option>
+                        </select>
                     </div>
+                </div>
 
-                    <!-- File Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="filebutton">Image 3</label>
-                        <div class="col-md-4">
-                            <input id="filebutton3" name="filebutton" class="input-file" type="file">
-                        </div>
+                <div class="form-group" style="display: none">
+                    <label class="col-md-4 control-label" for="selectmultiple">Size</label>
+                    <div class="col-md-4">
+                        <select id="product_size" name="selectmultiple" class="form-control" multiple="multiple">
+                            <option value="1">S</option>
+                            <option value="2">M</option>
+                            <option value="3">L</option>
+                            <option value="4">XL</option>
+                        </select>
                     </div>
+                </div>
 
-                    <!-- File Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="filebutton">Image 4</label>
-                        <div class="col-md-4">
-                            <input id="filebutton4" name="filebutton" class="input-file" type="file">
-                        </div>
+                <!-- Select Multiple -->
+                <div class="form-group"  style="display: none">
+                    <label class="col-md-4 control-label" for="selectmultiple">Select Colours</label>
+                    <div class="col-md-4">
+                        <select id="product_colours" name="selectmultiple" class="form-control" multiple="multiple">
+                            <option value="1">Black</option>
+                            <option value="2">Red</option>
+                            <option value="3">Green</option>
+                            <option value="4">Blue</option>
+                            <option value="5">Pink</option>
+                            <option value="6">Grey</option>
+                        </select>
                     </div>
+                </div>
 
-                    <!-- File Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="filebutton">Image 5</label>
-                        <div class="col-md-4">
-                            <input id="filebutton5" name="filebutton" class="input-file" type="file">
-                        </div>
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 1</label>
+                    <div class="col-md-4">
+                        <input id="filebutton1" name="filebutton" class="input-file" type="file">
                     </div>
+                </div>
 
-                    <!-- Button (Double) -->
-                    <div class="form-group">
-                        <div class="col-md-8">
-                            <button id="" name="" class="btn btn-success" onclick="insertprod()">save</button>
-                            <script>
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 2</label>
+                    <div class="col-md-4">
+                        <input id="filebutton2" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 3</label>
+                    <div class="col-md-4">
+                        <input id="filebutton3" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 4</label>
+                    <div class="col-md-4">
+                        <input id="filebutton4" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 5</label>
+                    <div class="col-md-4">
+                        <input id="filebutton5" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <button id="" name="" class="btn btn-success" onclick="insertprod()">save</button>
+                        <script>
 
                                 function insertprod()
                                 {
-
                                     var products_name = document.getElementById("products_name").value;
                                     var products_catagory = document.getElementById("products_catagory").value;
                                     var products_size = document.getElementById("products_size").value;
@@ -309,8 +310,8 @@
             function insertprod(pid)
             {
 
-
-                var urlplus =
+document.getElementById("insertprod"+pid).style.display = "none";
+var urlplus =
                     "prod_id="      +  pid ;
                 xmlhttp = new XMLHttpRequest();
                 xmlhttp.open("GET","http://localhost:8007/insert?"+urlplus, true);
