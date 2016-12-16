@@ -16,10 +16,24 @@ var signup = require('./routes/signup');
 var profile = require('./routes/profile');
 var inbox = require('./routes/profile');
 var settings = require('./routes/profile');
+var savepassword = require('./routes/profile');
 var orderhistory = require('./routes/profile');
 var updateprofile = require('./routes/profile');
 var message = require('./routes/socket');
+var search = require('./routes/search');
 // var socket = require('./routes/socket');
+
+var categories  =      require('./routes/categories');
+var product_list_vendor  =      require('./routes/product_list_vendor');
+var subcategories =    require('./routes/subcategories');
+var productins      =    require('./routes/productins');
+var productupd      =    require('./routes/productupd');
+var productdel      =    require('./routes/productdel');
+var products =         require('./routes/products');
+var vendor =           require('./routes/vendor');
+
+var cart = require('./routes/cart');
+
 var productDetails = require('./routes/productDetails');
 var childCateg = require('./routes/childCateg');
 var realProductsCateg = require('./routes/realProductsCateg');
@@ -55,6 +69,12 @@ app.use(
     }, 'request')
 );
 
+app.use(function(req, res, next) {
+    res.locals.session = req.session;
+    next();
+});
+
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -86,15 +106,19 @@ app.get('/inbox', inbox);
 
 app.get('/settings', settings);
 
+app.post('/savepassword', savepassword);
+
 app.get('/orderhistory', orderhistory);
 
 app.post('/updateprofile', updateprofile);
 
-app.post('/about', about);
+app.get('/about', about);
 
 // app.get('/socket', socket);
 
 app.get('/message/:id', message);
+
+app.post('/search', search);
 
 
 app.get('/productDetails/:id', productDetails);
@@ -103,8 +127,19 @@ app.get('/childCateg/:id', childCateg);
 app.get('/realProductsCateg/:id', realProductsCateg);
 app.post('/realProductsCateg', realProductsCateg);
 
+app.get('/childCateg/:id', childCateg);
+app.get('/realProductsCateg/:id', realProductsCateg);
+app.post('/realProductsCateg', realProductsCateg);
 
+app.get('/cart/add-to-cart/:id', cart);
+app.get('/cart/shop', cart);
+app.get('/cart/checkout', cart);
 
+app.get('/categories', categories);
+app.get('/subcategories', subcategories);
+app.get('/product_list_vendor', product_list_vendor);
+
+app.get('/products', products);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -137,7 +137,7 @@
         var id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 //        alert(id);
         socket.emit('chatmsg',id, $('#m').val());
-//        socket.send(userid);
+        socket.send(userid);
         $('#m').val('');
 //        alert(socket.id);
         return false;
@@ -160,7 +160,7 @@
 //            style = 'style="float:left;width:100%;text-align:right;"';
 //        }
 
-        $('#messages').append($('<li '+ style +' >').text(msg));
+        $('#messages').append($('<li >').text(msg));
     });
 
         setInterval(function() {

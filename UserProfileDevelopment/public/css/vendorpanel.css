@@ -1,0 +1,8 @@
+.form-horizontal label {
+    color: black !important;
+    /* size: 1px !important; */
+    font-size: 16px;
+    margin-left: -13px;
+    padding-bottom: 10px;
+}
+.disp_none{display: none}

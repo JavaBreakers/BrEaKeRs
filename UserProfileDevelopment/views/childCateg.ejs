@@ -40,7 +40,16 @@
         <div class="main">
 
 
-            <h2>Womens Clothing</h2>
+            <h2> <%= pcat[0].p_cat_name %> </h2>
+
+            <div class="col-lg-10 col-md-offset-1 topspace" style="margin-left: -15px; width: 1120px">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active"> <%= pcat[0].p_cat_name %> </li>
+                </ol>
+            </div>
+
+            <br><br><br><br><br>
 
             <% for(var i=0; i < title.length; i++){ %>
 
@@ -49,7 +58,8 @@
             <%var str2 = title[i].c_cat_type; %>
             <%var resStr = str1.concat(str2); %>
 
-            <ul style="list-style-type: none;margin: 0;    padding: 0;      width: 200px;       background-color: #f1f1f1;">
+
+            <ul style="list-style-type: none; margin: 0; padding: 0;      width: 200px;       background-color: #f1f1f1;">
    <li><a style="display: block;color: #000;padding: 8px 16px;text-decoration: none;" href="/realProductsCateg/<%= resStr %>"><%= title[i].c_cat_name %></a></li>
             </ul>
 

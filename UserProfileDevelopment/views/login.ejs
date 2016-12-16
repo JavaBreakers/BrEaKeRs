@@ -13,11 +13,8 @@
     <link rel="stylesheet" href="/css/signup.css">
 
     <div class="row">
-        <div class="col-lg-7" style="float: left;">
-        <% if(typeof error !== 'undefined'){ %>
-    <div class="alert alert-danger" role="alert"><%= error %></div>
-    <% } %>
-    <div class="form">
+
+    <div class="form" style="float:left">
 
         <ul class="tab-group">
             <li class="tab active"><a href="#signup">Sign Up</a></li>
@@ -26,10 +23,17 @@
 
 
         <div class="tab-content">
+
             <div id="signup" class="tab-pane active">
+                    <% if(typeof error !== 'undefined'){ %>
+                    <div class="alert alert-danger" role="alert"><%= error %></div>
+                    <% } %>
+
                 <!--<h1>Sign Up for Free</h1>-->
 
                 <form action="/signup" method="post">
+
+
 
                     <div class="top-row">
                         <div class="field-wrap">
@@ -99,9 +103,10 @@
         </div><!-- tab-content -->
 
     </div>
+        <img style="float: right;width: 45%;" src="/images/lsale.png" >
     </div> <!-- /form -->
 
-<img style="float: left;width: 42%;" src="/images/lsale.png" >
+
     </div>
 
     <script src="/js/index.js"></script>

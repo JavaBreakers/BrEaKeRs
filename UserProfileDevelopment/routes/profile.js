@@ -5,6 +5,8 @@ var express = require('express');
 var session = require('express-session');
 var app = express();
 
+var flash = require('connect-flash');
+
 var router = express.Router();
 
 
@@ -26,6 +28,8 @@ router.get('/profile', function (req, res, next) {
                 if (err)
 
                     console.log("Error Selecting : %s ", err);
+
+                    req.session.success = '0';
 
                     res.render('profile', {username: data, rows: rows});
 
@@ -136,8 +140,37 @@ router.post('/updateprofile', function (req, res, next) {
 
             user_name    : req.body.name,
             user_address : req.body.address,
+            user_phone   : req.body.phone,
             user_email   : req.body.email,
-            user_type   : req.body.type
+            user_type    : req.body.type
+
+        };
+
+        connection.query("UPDATE user set ? WHERE user_id = ? ",[data,id], function(err, rows)
+        {
+            // var msg = "1";
+
+            if (err)
+                console.log("Error Updating : %s ",err );
+
+            req.session.success = '1';
+            res.redirect('/profile');
+
+        });
+
+    });
+
+});
+
+router.post('/savepassword', function (req, res, next) {
+
+    req.getConnection(function (err, connection) {
+
+        var id = req.session.userid;
+
+        var data = {
+
+            user_password   : req.body.password
 
         };
 
@@ -147,7 +180,7 @@ router.post('/updateprofile', function (req, res, next) {
             if (err)
                 console.log("Error Updating : %s ",err );
 
-            res.redirect('/profile');
+            res.redirect('/settings');
 
         });
 

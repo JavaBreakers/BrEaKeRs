@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <% include cores/header.ejs %>
+
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/vendorpanel.css">
+
+    <div class="container">
+        <h2>Insert Products..</h2>
+        <div class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>New Product  </legend>
+
+                <!-- Text input-->
+                <input id="userid" name="userid" type="hidden" value="<%=useridd %>" />
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Name</label>
+                    <div class="col-md-4">
+                        <input id="products_name" name="textinput" type="text" placeholder="Enter product name" class="form-control input-md">
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Category</label>
+                    <div class="col-md-4">
+                        <select id="products_catagory">
+                            <option value="1">Casual Shirts</option>
+                            <option value="2">Jeans</option>
+                            <option value="3">Shoes</option>
+                            <option value="4">Jewellery</option>
+                            <option value="5">Bags</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group disp_none" >
+                    <label class="col-md-4 control-label" for="textinput">Product Size</label>
+                    <div class="col-md-4">
+                        <select id="products_size">
+                            <option value="1">S</option>
+                            <option value="2">M</option>
+                            <option value="3">L</option>
+                            <option value="4">XL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Color</label>
+                    <div class="col-md-4">
+                        <select id="products_colour">
+                            <option>red</option>
+                            <option>orange</option>
+                            <option>Grey</option>
+                            <option>Pink</option>
+                            <option>Purple</option>
+                            <option>Blue</option>
+                            <option>Black</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product Price</label>
+                    <div class="col-md-4">
+                        <input id="products_price" name="textinput" type="text" placeholder="produc price" class="form-control input-md">
+                        <!--<span class="help-block">help</span>-->
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group disp_none"   >
+                    <label class="col-md-4 control-label" for="textinput">Gender</label>
+                    <div class="col-md-4">
+                        <select id="gender">
+                            <option value="1">Male</option>
+                            <option value="2" selected="selected">Female</option>
+                            <option value="3">Both</option>
+                        </select>
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Product vendor</label>
+                    <div class="col-md-4">
+
+                        <select id="product_vendor">
+                            <option value="1">Nike</option>
+                            <option value="2">H&M</option>
+                            <option value="3">NewYorker</option>
+                            <option value="4">C&A</option>
+                            <option value="5">Pumma</option>
+                            <option value="6">Polo</option>
+                            <option value="7">Zara</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <label class="col-md-4 control-label" for="selectmultiple">Size</label>
+                    <div class="col-md-4">
+                        <select id="product_sizeM" name="selectmultiple" class="form-control" multiple="multiple">
+                            <option value="1">S</option>
+                            <option value="2">M</option>
+                            <option value="3">L</option>
+                            <option value="4">XL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Multiple -->
+                <div class="form-group disp_none"  >
+                    <label class="col-md-4 control-label" for="selectmultiple">Select Colours</label>
+                    <div class="col-md-4">
+                        <select id="product_colours" name="selectmultiple" class="form-control" multiple="multiple">
+                            <option value="1">Black</option>
+                            <option value="2">Red</option>
+                            <option value="3">Green</option>
+                            <option value="4">Blue</option>
+                            <option value="5">Pink</option>
+                            <option value="6">Grey</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 1</label>
+                    <div class="col-md-4">
+                        <input id="filebutton1" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 2</label>
+                    <div class="col-md-4">
+                        <input id="filebutton2" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 3</label>
+                    <div class="col-md-4">
+                        <input id="filebutton3" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 4</label>
+                    <div class="col-md-4">
+                        <input id="filebutton4" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- File Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">Image 5</label>
+                    <div class="col-md-4">
+                        <input id="filebutton5" name="filebutton" class="input-file" type="file">
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <button id="" name="" class="btn btn-success" onclick="insertprod()">save</button>
+                        <script>
+
+                            function insertprod()
+                            {
+
+                                var select1 = document.getElementById("product_sizeM");
+                                var selected1 = [];
+                                for (var i = 0; i < select1.length; i++) {
+                                    if (select1.options[i].selected) selected1.push(select1.options[i].value);
+                                }
+
+                                var products_name = document.getElementById("products_name").value;
+                                var products_catagory = document.getElementById("products_catagory").value;
+                                var products_size = document.getElementById("products_size").value;
+                                var products_colour = document.getElementById("products_colour").value;
+                                var products_price = document.getElementById("products_price").value;
+                                var products_vendor = document.getElementById("product_vendor").value;
+                                var gender  = document.getElementById("gender").value;
+                                var userid  = document.getElementById("userid").value;
+                                var filebutton1  = document.getElementById("filebutton1").value;
+                                var filebutton2  = document.getElementById("filebutton2").value;
+                                var filebutton3  = document.getElementById("filebutton3").value;
+                                var filebutton4  = document.getElementById("filebutton4").value;
+                                var filebutton5  = document.getElementById("filebutton5").value;
+
+                                var urlplus =
+                                "products_name="      +  products_name +
+                                "&products_catagory=" +  products_catagory +
+                                "&products_size="     +  products_size +
+                                "&products_colour="   +  products_colour +
+                                "&products_price="    +  products_price +
+                                "&products_vendor="   +  products_vendor +
+                                "&userid="   +  userid +
+                                "&gender=" +  gender +
+                                "&selected1="    +     selected1 +
+                                "&filebutton1="    +     filebutton1.replace(/^.*[\\\/]/, '') +
+                                "&filebutton2="    +     filebutton2.replace(/^.*[\\\/]/, '') +
+                                "&filebutton3="    +     filebutton3.replace(/^.*[\\\/]/, '') +
+                                "&filebutton4="    +     filebutton4.replace(/^.*[\\\/]/, '') +
+                                "&filebutton5="    +     filebutton5.replace(/^.*[\\\/]/, '') ;
+
+                                xmlhttp = new XMLHttpRequest();
+                                xmlhttp.open("GET","http://localhost:8001/insert?"+urlplus, true);
+                                xmlhttp.onreadystatechange=function(){
+                                    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                                        string=xmlhttp.responseText;
+
+                                        alert('new row insertedid is '+string);
+                                    }
+                                }
+
+                                xmlhttp.send();
+                                setTimeout(function(){ window.open('http://localhost:3000/product_list_vendor',"_SELF");}, 1000);
+                            }
+                        </script>
+                        <button id="button2id" name="button2id" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+
+            </fieldset>
+
+    </div>
+
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+<% include cores/footer.ejs %>

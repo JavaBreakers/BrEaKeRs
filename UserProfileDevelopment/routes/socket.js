@@ -72,7 +72,7 @@ io.on('connection', function(socket){
 
     // }
     // clients = {socket: socket.id};
-    console.log(clients);
+    // console.log(clients);
 
     // socket.on('chatmsg', function(msg){
     //
@@ -84,7 +84,7 @@ io.on('connection', function(socket){
 
         // alert(msg);
 
-        // console.log(id);
+         console.log(id);
     //
         for(var i = 0, len = clients.length; i < len; i++) {
 
@@ -93,6 +93,7 @@ io.on('connection', function(socket){
 
             if( clients[ i ].userid == id ) {
                 console.log(id);
+                console.log(clients);
                 console.log(clients[i].usersocketid);
                 socket.emit("chatmsg", msg);
                 socket.to(clients[i].usersocketid).emit("chatmsg", msg);

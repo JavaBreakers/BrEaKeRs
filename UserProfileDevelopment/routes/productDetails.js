@@ -15,7 +15,8 @@ var myProData = [];
 var myColorData = [];
 var mySizeData = [];
 var myCommentsData = [];
-
+var myProImagesData = [];
+var myURL = [];
 
 /* GET home page. */
 router.get('/productDetails/:id', function (req, res)
@@ -24,7 +25,9 @@ router.get('/productDetails/:id', function (req, res)
     if(req.session && req.session.username) {
 
         var productId = req.params.id;
-        req.getConnection(function (err, connection) {
+
+        req.getConnection(function (err, connection)
+        {
             query = "SELECT * FROM products where products_id = '" + productId + "'";
             connection.query(query, function (err, rows) {
                 if (err)
@@ -37,6 +40,20 @@ router.get('/productDetails/:id', function (req, res)
                 else {
                 }
             });
+
+
+            query = "SELECT products.products_name, child_catagories.c_cat_name, parent_catagories.p_cat_name from products INNER JOIN child_catagories ON products.products_catagory=child_catagories.c_cat_id and products.products_id= '" + productId + "' INNER JOIN parent_catagories ON child_catagories.c_cat_parent=parent_catagories.p_cat_id";
+            connection.query(query, function (err, rows)
+            {
+                if (err)
+                    console.log("Error Selecting : %s ", err);
+                if (rows.length)
+                {
+                    setMyURLValue(rows);
+                }
+                else {}
+            });
+
 
             query = "SELECT p1.* FROM products p1 INNER JOIN products p2 ON p1.products_catagory = p2.products_catagory and p2.products_id = '" + productId + "'";
             connection.query(query, function (err, rows) {
@@ -51,7 +68,24 @@ router.get('/productDetails/:id', function (req, res)
                 }
             });
 
-            query = "SELECT * FROM colour where product_id = '" + productId + "'";
+            //*******************************************************************************************
+            query = "SELECT product_images.image_link FROM product_images INNER JOIN products ON product_images.image_id=products.pro_images and products.products_id = '" + productId + "'";
+            connection.query(query, function (err, rows) {
+                if (err)
+                    console.log("Error Selecting : %s ", err);
+                if (rows.length) {
+                    setMyImagesValue(rows);
+                }
+                else {
+                }
+            });
+
+            //*******************************************************************************************
+
+
+
+
+            query = "SELECT colour.main_color_name FROM colour INNER JOIN colorhandler  ON colorhandler.main_color_id=colour.main_color_id INNER JOIN products ON products.products_colour=colorhandler.color_id and products.products_id = '" + productId + "'";
             connection.query(query, function (err, rows) {
                 if (err)
                     console.log("Error Selecting : %s ", err);
@@ -64,11 +98,14 @@ router.get('/productDetails/:id', function (req, res)
             });
 
 
-            query = "SELECT * FROM size where product_id = '" + productId + "'";
+            query = "SELECT size.main_size_name FROM size INNER JOIN sizehandler ON sizehandler.main_size_id=size.main_size_id INNER JOIN products ON sizehandler.size_id=products.products_size and products.products_id = '" + productId + "'";
             connection.query(query, function (err, rows) {
                 if (err)
                     console.log("Error Selecting : %s ", err);
-                if (rows.length) {
+                if (rows.length)
+                {
+                    console.log("Size data:");
+                    console.log(rows[0]);
                     setSizeValue(rows);
                 }
                 else {
@@ -76,7 +113,7 @@ router.get('/productDetails/:id', function (req, res)
             });
 
 
-            query = "SELECT comment.comment_text, user.user_name FROM comment LEFT JOIN user ON comment.comment_by=user.user_id and comment.comment_on = '" + productId + "'";
+            query = "SELECT comment.comment_text, user.user_name FROM comment INNER JOIN user ON comment.comment_by=user.user_id and comment.comment_on = '" + productId + "'";
             connection.query(query, function (err, rows) {
                 if (err)
                     console.log("Error Selecting : %s ", err);
@@ -86,14 +123,16 @@ router.get('/productDetails/:id', function (req, res)
                     var data = new Object();
                     data = req.session.username;
 
-                    res.render('ProductDetails', {
+                    res.render('productDetails', {
                         username: data,
                         productData: myProData,
+                        productImages: myProImagesData,
                         productColors: myColorData,
                         productSizes: mySizeData,
                         productComments: myCommentsData,
                         allProducts: myProducts,
-                        myProductId: productId
+                        myProductId: productId,
+                        urlsdata: myURL
                     });
                 }
                 else {
@@ -145,10 +184,21 @@ router.post('/productDetails', function (req, res, next)
 
 });
 
+function setMyURLValue(value)
+{
+    myURL = value;
+}
+
 function setMyProductsValue(value)
 {
     myProducts = value;
 }
+
+function setMyImagesValue(value)
+{
+    myProImagesData = value;
+}
+
 
 function setValue(value)
 {
